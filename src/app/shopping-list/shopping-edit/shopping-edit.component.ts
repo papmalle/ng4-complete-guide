@@ -8,8 +8,8 @@ import {Ingredient} from '../../shared/ingredient.model';
 })
 export class ShoppingEditComponent implements OnInit {
   @Output() addEvent = new EventEmitter<{ name: string, amount: number }>();
-  name = '';
-  amount = 0;
+  name: string = '';
+  amount: number = 0;
 
   constructor() {
   }
@@ -18,7 +18,7 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   addIngredient(inputData: { name: string, amount: number }): void {
-    console.log(inputData)
+    console.log(inputData);
     this.addEvent.emit(inputData);
   }
 }
